@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+<!--basics-->
+    
     <a target="_blank" href="https://google.com">Open google</a>
     <h2>this is my first website</h2>
 
@@ -41,20 +44,103 @@
         </table>
 
         
-        <ul>
-           <li>husnain</li>
-           <li>ikrma</li>
-           <li>rehan</li>
-        </ul>
+       
         
+<!-- forms in HTML -->
 
-        <ol type="A">
-            <li>husnainAli</li>
-            <li>leghari</li>
-            <li>shoaib</li>
-        </ol>
-        
-
+<h3>Form For Personal Info Of Student</h3>
     
+<form action="/submit" method="post"></form>
+
+<div>
+<label for="username"> Enter UserName </label>
+</div>
+
+<div>
+  <input type="text" id="username" name="username" placeholder="Enter username">
+</div>
+
+<div>
+  <label for="password">Enter Password</label>
+</div>
+
+<div>
+  <input type="password" id="password" name="password" required placeholder="Enter password">
+</div>
+<br>
+
+<div>
+<label for="gender">Select Gender : </label>
+</div>
+
+<div>
+  <input type="radio" id="male" name="gender" value="Male">
+  <label for="male">Male</label>
+   <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label>
+</div>
+<br>
+
+<div>
+<input type="checkbox" id="subscribe " name="subscribe" value="yes">
+<label for="subscribe">Subscribe To NewsLetter</label>
+</div>
+
+<br>
+
+<div>
+    <label for="mail" >Enter Your E-Mail</label>
+</div>
+
+<div>
+    <input type="email" id="mail" name="mail" placeholder="Enter Your Mail">
+</div>
+
+<div>
+  <input type="button" value="Confirm E-Mail">
+</div>
+
+<br>
+
+<div>
+<label for="cities" >Select Your City</label>
+</div>
+
+<div>
+  <select name="Cities" id="city" >
+
+  <option value="lhr">Lahore</option>
+  <option value="khi">Karachi</option>
+  <option value="isb">Islamabad</option>
+  <option value="Psw">Peshawar</option>
+  <option value="Qt">Quetta</option>
+
+ </select>
+</div>
+<br>
+<div>
+  <label for="feedback">Enter Your Feedback Regarding University</label>
+</div>
+
+<div>
+  <textarea name="Feedback" id="feedback" placeholder="Enter Your Feedback" rows="5" cols="50"></textarea>
+</div>
+
+<br>
+
+<div>
+  <label for="submit">Click the button below to submit your Info</label>
+</div>
+
+<div>
+  <input type="submit">
+</div>
+
+<br>
+
+<div>
+    <label for="info">Information Submitted Successfully!</label>
+</div>
+
   </body>
 </html>
