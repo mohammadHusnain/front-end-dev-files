@@ -1,0 +1,24 @@
+
+div p {         /* acces paragraph inside div no matter where is paragraph inside article section or other div or span*/
+    background-color: brown; 
+}
+
+div > p { /* accesses paragraph if it is directly present inside div*/
+    background-color: blueviolet;
+}
+
+
+a:active{
+    background-color: red;
+}
+
+a:visited{
+    color: orangered;
+    background-color: yellow;
+}
+
+a:hover{
+    color: blue;
+    background-color: olivedrab;
+}
+

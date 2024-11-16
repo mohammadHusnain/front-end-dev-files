@@ -5,3 +5,13 @@ th{
 td{
     border: 2px solid black;
 }
+
+#myid{
+    color: black;
+    background-color: aqua;
+}
+
+.myclass{
+    color: black;
+    background-color: brown;
+}
