@@ -1,24 +1,188 @@
-
-div p {         /* acces paragraph inside div no matter where is paragraph inside article section or other div or span*/
-    background-color: brown; 
+div p {
+  /* acces paragraph inside div no matter where is paragraph inside article section or other div or span*/
+  /* background-color: brown; */
 }
 
-div > p { /* accesses paragraph if it is directly present inside div*/
-    background-color: blueviolet;
+div > p {
+  /* accesses paragraph if it is directly present inside div*/
+  /* background-color: blueviolet; */
 }
 
-
-a:active{
-    background-color: red;
+a:active {
+  background-color: red;
 }
 
-a:visited{
-    color: orangered;
+a:visited {
+  color: orangered;
+  background-color: yellow;
+}
+
+a:hover {
+  color: blue;
+  background-color: olivedrab;
+}
+
+/*background color is in padding area but not applied in margin area,
+-- box sizing : border box property describe that given height or width is of combined content , border and padding but does not includes margin , if we dont use this properety the height/width wil be solely applied to content --
+
+-- margin - collapse : if we have taken 2 divs and there is some margin , height , padding and border of these 2 divs , margin collapse says that the div having greater margin than other div , its margin will be applied  as whole to the box-- */
+
+.div1 {
+  color: black;
+  background-color: aqua;
+  padding: 25px;
+  border: 5px solid blue;
+  margin: 25px;
+  height: 75px;
+  box-sizing: border-box; /*height is applied to whole box model instead of only content*/
+}
+.div2 {
+  color: black;
+  background-color: burlywood;
+  padding: 25px;
+  border: 5px solid black;
+  margin: 55px;
+
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2%;
+  letter-spacing: 2px;
+}
+h2 {
+  text-transform: capitalize;
+  text-decoration: underline;
+  text-decoration-color: aqua;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 7px;
+  text-indent: 45px;
+  width: 80px;
+  border: 2px solid red;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  color: darkred;
+}
+
+/* div>p:first-child{
+    color: red;
     background-color: yellow;
+} */
+
+/* div>p{
+  color: white;
+  background-color: blue;
+} */
+
+/* inline styles have highest priority 1000 , ids , 100 , classes 10 , element/ attribute selector like h1 is 1 , and for all * the priority is zero 
+!important has highes priority value even than inline styles with 10000 points
+*/
+
+/*rem : root ke size ka 2 times
+em : actuyal size ka 2 times
+
+vw and vh are used for responsivenesss instead of pixels*/
+
+.box {
+  box-sizing: border-box;
+  color: maroon;
+  background-color: aqua;
+  border: 2px solid black;
+  width: 70vw;
+  height: 10vh;
+  margin: 23px auto;
+  font-size: 20px;
 }
 
-a:hover{
-    color: blue;
-    background-color: olivedrab;
+.container {
+  box-sizing: border-box;
+  color: maroon;
+  background-color: aquamarine;
+  border: 2px solid black;
+  width: 70vw;
+  min-height: 80vh;
+  margin: 23px auto;
+  font-size: 2em;
+}
+
+.container p {
+  font-size: 2rem;
+  width: 50%;
+}
+
+.box1 {
+  border: 2px solid black;
+  padding: 34px;
+  box-shadow: 5px 15px 5px maroon;
+  outline: 2px solid blueviolet;
+}
+
+.overflow p {
+  height: 10vw;
+  width: 5vw;
+  border: 2px solid black;
+  overflow: scroll hidden;
+}
+
+.divs {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  height: 30px;
+  border: 2px solid black;
+}
+
+.box01 {
+  height: 100px;
+  width: 1000px;
+  border: 2px solid black;
+  background-color: aqua;
+  padding: 5px;
+  margin: 5px;
+  /* position: absolute; */
+  left: 55px;
+  top: 0px;
+  position: sticky;
+  
+}
+.box2 {
+  height: 100px;
+  width: 1000px;
+  border: 2px solid black;
+  background-color: orange;
+  padding: 5px;
+  margin: 5px;
+  
+   
+}
+.box3 {
+  height: 100px;
+  width: 1000px;
+  border: 2px solid black;
+  background-color: olivedrab;
+  padding: 5px;
+  margin: 5px;
+
+ 
+}
+.box4 {
+  height: 100px;
+  width: 1000px;
+  border: 2px solid black;
+  background-color: purple;
+  padding: 5px;
+  margin: 5px;
+}
+.parentdiv {
+  height: 500px;
+  width: 1200px;
+  border: 3px solid purple;
+  padding: 15px;
+  margin: 15px;
+  /* position: relative; */
+  /* filter: invert(); */
+  /* transform: translate(); */
+
+  /* all these are position properties if any of these are present in the parent div , then child divs will adjust themselves according to parent position and not the root element ancestor */
 }
 
