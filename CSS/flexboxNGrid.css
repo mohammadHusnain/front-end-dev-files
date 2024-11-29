@@ -1,0 +1,55 @@
+/*
+display: flex;
+Activates flexbox layout on a container element.
+
+flex-direction: row;
+Sets flex items' direction (row, column, reverse options).
+
+justify-content: center;
+Aligns items horizontally (start, center, space-between, etc.).
+
+align-items: stretch;
+Aligns items vertically (stretch, center, baseline, etc.).
+
+align-content: space-around;
+Controls multi-line item spacing (space, center, stretch).
+
+flex-wrap: nowrap;
+Allows items to wrap or stay in one line.
+
+flex: 1;
+Defines item growth, shrink, and base size (shorthand).
+
+order: 2;
+Rearranges item display order based on numeric value.
+
+align-self: flex-start;
+Aligns a specific item differently within its container.
+
+gap: 10px;
+Adds spacing between flex items without margins. 
+ */
+
+.container{
+    height: 600px;
+    width: 1200px;
+    border: 2px solid black;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: row-reverse;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   align-content: space-around;
+   gap: 10px;
+}
+
+.items{
+    height: 50px;
+    width: 80px;
+    border: 2px solid black;
+    background-color: blue;
+    flex-shrink: 1;
+
+}
+

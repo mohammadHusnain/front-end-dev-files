@@ -182,7 +182,24 @@ vw and vh are used for responsivenesss instead of pixels*/
   /* position: relative; */
   /* filter: invert(); */
   /* transform: translate(); */
-
   /* all these are position properties if any of these are present in the parent div , then child divs will adjust themselves according to parent position and not the root element ancestor */
-}
 
+
+
+
+  /* we make global variables in :root as :root{--color : pink , background-color : lightpink}
+  and access it as : .nav{
+  background-color : var(--color);
+  
+  } */
+
+/* MEDIA QUERIES : used by syntax :  @media only screen and (max-width:500px){
+  css code;
+}
+ */
+
+
+
+
+
+}

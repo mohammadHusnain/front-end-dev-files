@@ -1,0 +1,14 @@
+.boxes *{
+    color: brown;
+    background-color: mediumseagreen;
+    padding: 5px;
+    border: 2px solid black;
+}
+
+p,a,.box, [data-color=primary]{
+    padding-top: 45px;
+}
+
+.boxes :nth-child(even){
+    color: blueviolet;
+}
