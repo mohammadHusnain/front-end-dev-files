@@ -1,7 +1,9 @@
 nav{
+    margin: 5px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border: 2px solid black;
 }
 
 .logo img{
@@ -20,3 +22,124 @@ nav{
     padding: 20px;
 }
 
+.section {
+    margin: 5px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text alignment */
+    font-size: 27px;
+    border: 2px solid black;
+    font-family: sans-serif;
+}
+
+.mainheading {
+    margin: 20px 0; /* Add some spacing above and below the heading */
+}
+
+.btn-outer{
+    margin: 5px;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+   border: 2px solid black;
+}
+
+.btn{
+   background-color: #00b6d1;
+   padding: 14px 16px;
+   color: white;
+   border: none;
+   border-radius: 6px;
+   font-weight: 700;
+   margin: 12px 0px;
+   cursor: pointer;
+}
+
+.flex{
+    display: flex;
+}
+.small{
+    font-size: 12px;
+}
+
+.mainsection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main1{
+    max-width: 50vw;
+    margin: auto;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.item{
+     padding: 25px;
+     background-color: #f9f9f9;
+     border-radius: 10px;
+     text-align: center;
+}
+
+.btn-blue{
+background-color: #00b6d1;
+padding: 10px 10px;
+   color: white;
+   border: none;
+   border-radius: 6px;
+   font-weight: 700;
+}
+
+.btn-green{
+background-color: lightgreen;
+padding: 10px 10px;
+   color: white;
+   border: none;
+   border-radius: 6px;
+   font-weight: 700;
+}
+
+.item-lang{
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 20px ;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+
+.main1 :nth-child(1){
+   padding:auto; 
+}
+
+.main1 :nth-child(2){
+   font-size: 23px;
+}
+.text1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    font-size: 14px;
+    font-family: monospace;
+}
+
+@media screen and (max-width : 945px){
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr;
+      
+    }
+    
+}
