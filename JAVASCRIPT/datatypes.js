@@ -185,7 +185,7 @@ console.log(url.replace("%20", "-")); // outputs: "https://remotegenze.com/remot
 
 console.log(url.includes("genz")); // outputs: true
 
-console.log(url.includes("sundarchudai")); // outputs: false
+console.log(url.includes("sundarPicai")); // outputs: false
 
 // STRING SPLIT
 console.log(gameName.split("----")); // outputs: ["husnainch1"]

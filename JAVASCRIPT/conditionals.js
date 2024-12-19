@@ -28,3 +28,35 @@ else if (marks >= 90) {
 
 
 
+// == is for equal to and === is for equals value and types.
+// 3=="3" is true coz it only compares value and 3==="3" is false coz it compares both values and types
+
+// != , and !== are not equal to and not equal to value and not equal to type
+// logical operators, && and || or , ! is not
+
+// > a=23
+// 23
+//     > b=24
+// 24
+//     > a !== b
+// true
+//     > b=23
+// 23
+//     > a == b
+// true
+//     > a === b
+// true
+//     > b="23"
+// '23'
+//     > a == b
+// true
+//     > a === b
+// false 
+ 
+// ternary operator used here is ?
+
+let a = 6;
+let b = 8;
+
+let c = a>b ? (a-b) : (b-a) // ? = ternary operator , if a is greater than b , then do a-b else do b-a
+console.log(c);
