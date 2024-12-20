@@ -58,5 +58,5 @@ else if (marks >= 90) {
 let a = 6;
 let b = 8;
 
-let c = a>b ? (a-b) : (b-a) // ? = ternary operator , if a is greater than b , then do a-b else do b-a
+let c = a>b ? (a-b) : (b-a) // ? = ternary operator , if a is greater than b , then do a-b else do b-a.
 console.log(c);
