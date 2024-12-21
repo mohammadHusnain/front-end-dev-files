@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script src="exercises.js"></script></body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faulty Calculator</title>
+
+<h2>Faulty Calculator</h2>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .calculator {
+            display: inline-block;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .display {
+            width: 200px;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .buttons button {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            font-size: 18px;        
+            border: none;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .buttons button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button onclick="addToDisplay('7')">7</button>
+            <button onclick="addToDisplay('8')">8</button>
+            <button onclick="addToDisplay('9')">9</button>
+            <button onclick="addToDisplay('+')">+</button><br>
+            <button onclick="addToDisplay('4')">4</button>
+            <button onclick="addToDisplay('5')">5</button>
+            <button onclick="addToDisplay('6')">6</button>
+            <button onclick="addToDisplay('-')">-</button><br>
+            <button onclick="addToDisplay('1')">1</button>
+            <button onclick="addToDisplay('2')">2</button>
+            <button onclick="addToDisplay('3')">3</button>
+            <button onclick="addToDisplay('')"></button><br>
+            <button onclick="addToDisplay('0')">0</button>
+            <button onclick="addToDisplay('.')">.</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="addToDisplay('/')">/</button><br>
+            <button onclick="clearDisplay()">C</button>
+        </div>
+    </div>
+    
+    <script>
+        let currentInput = "0";
+
+        // Add number or operator to the display
+        function addToDisplay(value) {
+            if (currentInput === "0") {
+                currentInput = value;
+            } else {
+                currentInput += value;
+            }
+            document.getElementById("display").innerText = currentInput;
+                }
+
+                // Clear the display
+                function clearDisplay() {
+                    currentInput = "0";
+                    document.getElementById("display").innerText = currentInput;
+                }
+
+                // Calculate the result, but with some intentional faults!
+                function calculate() {
+                    try {
+                        // Intentional bugs here:
+                        let result = eval(currentInput);
+
+                        // Bug 1: Return result as a string (inconsistent behavior)
+                        result = result.toString();
+
+                        // Bug 2: Introduce random errors
+                        if (Math.random() > 0.7) {
+                            result = "Error!";
+                        }
+
+                        // Bug 3: Randomly add a wrong result to the output
+                        if (Math.random() > 0.5) {
+                            result = (parseFloat(result) + Math.floor(Math.random() * 10)).toString();
+                        }
+
+                        // Display the result
+                        document.getElementById("display").innerText = result;
+                        currentInput = result;
+                    } catch (error) {
+                        // Handle errors (e.g., invalid input)
+                        document.getElementById("display").innerText = "Error!";
+                        currentInput = "0";
+                    }
+                }
+          </script>
+
+</body>
+
+</html>
+
+
+
+
+
