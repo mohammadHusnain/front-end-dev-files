@@ -1,4 +1,4 @@
-// my code half is wrong
+//my code half is wrong
 console.log("--- Faulty Calculator ---");
 
 function sum(a,b){
@@ -52,3 +52,21 @@ else {
     b = obj[b]
     alert(`the result is ${eval(`${a} ${b} ${c} `)}`);
 }
+
+//exercise 2 : BUSINESS NAME GENERATOR my code
+
+function businessNameGenerator(adj , name , word) {
+    return adj+name+word;
+}
+
+result1 = businessNameGenerator("Crazy " , "Engine ", "Hub");
+result2 = businessNameGenerator("Fire" , "Foods" , "Bros");
+result3 = businessNameGenerator("Amazing" , "Garmrents" , "Limited");
+
+console.log("Welcome To :" , result1);
+console.log("Welcome To :", result2);
+console.log("Welcome To :", result3);
+
+
+// exercise 2 : BUSINESS NAME GENERATOR harry code
+

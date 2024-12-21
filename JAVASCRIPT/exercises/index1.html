@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+// 
+
+    <script>
+        let random = Math.random();
+        let first, second , third;
+        // 0.33 - 0.66- 1
+
+// first word of business generator
+
+        if (random<0.33) {
+            first = "Crazy";
+        } 
+        else if (random < 0.66 && random >= 0.33){
+            first = "Amazing"
+        }
+        else{
+            first = "Fire"
+        }
+
+        // second word of business generator
+        random = Math.random();
+
+            if (random < 0.33) {
+                second = "Engine";
+            }
+            else if (random < 0.66 && random >= 0.33) {
+                second = "Garments"
+            }
+            else {
+                second = "Foods"
+            }
+
+            // third word of business generator
+
+                    random = Math.random();
+                if (random < 0.33) {
+                    third = "Hub";
+                }
+                else if (random < 0.66 && random >= 0.33) {
+                    third = "Limited"
+                }
+                else {
+                    third = "Bros"
+                }
+
+                // console.log(`${first} ${second} ${third}`);
+                alert(`${first} ${second} ${third}`)
+                
+
+        </script>
+</body>
+</html>
