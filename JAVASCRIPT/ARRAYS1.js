@@ -10,7 +10,7 @@ arr[0] = 100 //replaces 23 with 100 as arrays are mutable
 // console.log(arr.length);
 // console.log(arr[2]);
 // console.log(arr[3]);
-// console.log(typeof arr);
+console.log(typeof arr);
 
 //methods of array
 
