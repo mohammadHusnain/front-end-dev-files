@@ -22,5 +22,7 @@ loadscript("https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/pri
 
 // of we takes callbacks inside callbacks it becomes callback hell or dom pyramid. sol of callback hell is promises
 
+// ----------- promises-----------//
+
 
 
