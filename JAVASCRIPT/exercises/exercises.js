@@ -95,3 +95,5 @@ function fact(numb) {
 const numb = 6; // Replace with your desired number
 console.log("Factorial of " + numb + " is: " + factorial(numb));
 
+//exercise 4
+
