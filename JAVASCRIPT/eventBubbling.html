@@ -1,0 +1,72 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event bubbling</title>
+ </head>
+
+ <style>
+    .child{
+        background-color: aliceblue;
+        padding: 20px;
+        margin: 20px;
+        border: 2px solid black;
+        cursor: pointer;
+    }
+
+    .childcontainer{
+        background-color: aqua;
+        margin: 20px;
+        padding: 20px;
+       
+    }
+
+     .container{
+        background-color:  greenyellow;
+        margin: 20px;
+        padding: 20px;
+       
+    }
+
+
+ </style>
+
+ <body>
+    
+<div class="container">
+    <section class="childcontainer">
+        <div class="child">
+            i am a child
+        </div>
+    </section>
+</div>
+
+<script>
+
+        //  template syntax for writing an event in js
+
+    // element.addEventListener("write name of event here wg click, doubleclick, contectmenu etc   " , function example such as () =>{
+    //     document.querySelector(".box").innerHTML= "yayu are clicked"
+
+    // })
+
+    document.querySelector(".child").addEventListener("click", (e)=>{ //addEventListener : used to assign multiple handlers to an event
+
+        e.stopPropagation() // propogates and limits the alert one time for child only and does not give other alert coz it is propogated
+        alert("child was clicked")
+    })
+
+    document.querySelector(".childcontainer").addEventListener("click", (e) => {
+        e.stopPropagation() // propogates and limits the alert one time for .childcontainer only and does not give other alert coz it is propogated
+            alert("childcontainer was clicked")
+        })
+
+        document.querySelector(".container").addEventListener("click", () => {
+                alert("container was clicked")
+            })
+
+</script>
+
+ </body>
+ </html>
