@@ -24,5 +24,30 @@ loadscript("https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/pri
 
 // ----------- promises-----------//
 
+console.log("these are promises");
 
+let promise1 = new Promise((resolve , reject) => {
+let a = Math.random;
+if (a<0.5) {
+    reject("no random number was supporting you");
+}
+
+else{
+    setTimeout(()=>{
+        console.log("i m dunnn");
+        resolve('husnaiynnn here ')
+        
+    }, 3000)
+}
+
+})
+
+let p2 = Promise.all([promise1])
+p3.then((a)=>{
+    console.log(a);
+    
+}).catch(err=>{
+    console.log(err);
+    
+})
 
