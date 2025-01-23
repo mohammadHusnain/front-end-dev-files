@@ -1,0 +1,36 @@
+h1,h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    height: 120px;
+    width: 120px;
+    border: 2px solid black;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.canvas{
+  display: flex;
+     justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 40px;
+}
+
+#grey{
+    background-color: grey;
+}
+#orange{
+    background-color: orange;
+}
+#purple{
+    background-color: purple;
+}
+#blue{
+    background-color: blue;
+}
+
+
