@@ -5,7 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Generator</title>
 </head>
+
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: beige;
+    }
+
+    button{
+        height: 25px;
+        width: 100px;
+        /* font-weight: bold; */
+        font-size: 15px;
+    }
+
+</style>
+
 <body>
-    
+    <div class="container">
+        <h1>BMI CALCULATOR</h1>
+
+        <form>
+            <p><label>Enter Height In CM : </label><input type="text" id="height"></p>
+            <p><label>Enter Weight In KG : </label><input type="text" id="weight"></p>
+            <button>Calculate</button><br><br>
+            <div id="result">Calculated BMI: </div>
+            <div id="weightGuide">
+                <h3>BMI Weight Guide</h3>
+                <p>Under Weight = Less than 18.5</p>
+                <p>Normal Weight = 18.6 - 24.9</p>
+                <p>Over Weight = 25 - 29.9</p>
+                <p>Obese = Greater than 30</p>
+            </div>
+        </form>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
