@@ -5,6 +5,82 @@ const userInput = document.querySelector('#guessfield')
 const guessSlot = document.querySelector('.guesses')
 const remaining = document.querySelector('.lastresult')
 const lowOrHigh = document.querySelector('.loworhi')
+const startOver = document.querySelector('.resultparas')
+
+const p = document.createElement('p');
+
+let prevGuess = []
+let numberOfGuesses = 1;
+
+let playgame = true;
 
 
+//functions
 
+if (playgame) {
+  submit.addEventListener('click' , function(e){
+    e.preventDefault();
+    const guess = parseInt(userInput.value);
+    console.log(guess);
+    validateGuess(guess);
+  })  
+}
+
+function validateGuess(guess) {
+    if (isNaN(guess)) {
+        alert('please enter a valid number')
+    }
+    else if (guess<1) {
+        alert('please enter a valid number more than 1')
+
+    }
+    else if (guess > 100) {
+        alert('please enter a valid number less than 100')
+
+    }
+    else{
+        prevGuess.push(guess)
+        if (numberOfGuesses === 11) {
+            displayGuess(guess)
+            displayMessage(`Game Over . Random number was ${randomNumber}`)
+            endGame();
+        }
+        else{
+            displayGuess(guess)
+            checkGuess(guess)
+        }
+    }
+}
+
+ function checkGuess(guess) {        // check prvided number is equal , lower or greater than provided number
+    if (guess === randomNumber) {
+        displayMessage(`you guessed it right`)
+        endGame()
+    }
+    else if (guess < randomNumber) {
+        displayMessage(`number is too low`)
+
+    }
+    else if (guess > randomNumber) {
+        displayMessage(`number is too high`)
+
+    }
+ }
+
+ function displayGuess(guess) {
+    userInput.value = ''
+    guessSlot.innerHTML += `${guess} , ` //pushes values into guess
+    numberOfGuesses ++;
+    remaining.innerHTML = `${11-numberOfGuesses}`
+ }
+
+function displayMessage(message) { // this method interacts directly with dom
+    lowOrHigh.innerHTML = `<h2>${message}</h2>`;
+}
+
+function newGame() {
+    
+}
+function endGame() {
+    
+}
