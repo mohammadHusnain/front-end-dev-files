@@ -20,3 +20,61 @@ async function getData() {
 }
 
 getData();
+
+//complex example
+// Simulate an API call to get user details
+function fetchUser(userId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (userId === 1) {
+                resolve({ id: 1, name: "John Doe", email: "john@example.com" });
+            } else {
+                reject("User not found");
+            }
+        }, 2000); // 2-second delay
+    });
+}
+
+// Simulate an API call to get posts by user
+function fetchUserPosts(userId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (userId === 1) {
+                resolve([
+                    { id: 101, title: "Post 1", content: "Lorem ipsum" },
+                    { id: 102, title: "Post 2", content: "Dolor sit amet" },
+                ]);
+            } else {
+                reject("No posts found for this user");
+            }
+        }, 1500); // 1.5-second delay
+    });
+}
+
+// Complex async function
+async function getUserDetailsAndPosts(userId) {
+    try {
+        console.log("Fetching user details...");
+        const user = await fetchUser(userId); // Wait for user details
+        console.log("User details received:", user);
+
+        console.log("Fetching user posts...");
+        const posts = await fetchUserPosts(userId); // Wait for user posts
+        console.log("User posts received:", posts);
+
+        // Print final data
+        console.log(`\nUser Info:
+        Name: ${user.name}
+        Email: ${user.email}`);
+
+        console.log("\nUser Posts:");
+        posts.forEach(post => {
+            console.log(`- ${post.title}: ${post.content}`);
+        });
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+// Call the function
+getUserDetailsAndPosts(1);
