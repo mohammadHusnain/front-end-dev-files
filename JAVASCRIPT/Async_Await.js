@@ -1,29 +1,48 @@
-function getData() {
-    return new Promise((resolve , reject)=>{
-        setTimeout(()=>{
-            resolve("promise resolved successfully")
-        } , 2500)
-    })
+// function getData() {
+//     // simulate getting data from a server
+//     return new Promise((resolve , reject)=>{
+//         setTimeout(()=>{
+//             resolve("promise resolved successfully")
+//         } , 2500)
+//     })
+// }
+
+//async await test on dummy api
+
+async function getData() {
+    // Simulate getting data from a server
+    let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    let data = await response.text(); // Parse the JSON data
+    return data; // Return the fetched data
 }
 
+// Example usage
+getData().then(data => {
+    console.log('Data received:', data);
+}).catch(error => {
+    console.error('Error fetching data:', error);
+});
+
+
+
 async function main() {
-    
-console.log("loading modules");
-console.log("almost there");
-console.log("data loaded");
+
+    console.log("loading modules");
+    console.log("almost there");
+    console.log("data loaded");
 
     //async await
-let data = await getData();
+    let data = await getData();
 
-console.log(data);
-console.log("process data");
-console.log("other task");
+    console.log(data);
+    console.log("process data");
+    console.log("other task");
 
 }
 
 main(); // calling function
 
-// data.then((v)=>{  // this is callback approach , we can still modify it with async await approach 
+// data.then((v)=>{  // this is callback approach , we can still modify it with async await approach
 
 // console.log(data);
 // console.log("process data");
