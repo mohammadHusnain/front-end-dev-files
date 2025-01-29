@@ -8,6 +8,25 @@
 <body>
 
     <h1>Async Await Project 1</h1>
+    <button id="stop">Stop</button>
     
 </body>
+<script>
+    const name = function () {
+            console.log("husnain");
+         }
+         const changeText = function(){
+         document.querySelector('h1').innerHTML = "best Js Asyn Await Project"
+         }
+
+    setTimeout( name, 2000)
+    const changeMe = setTimeout( changeText, 5000);
+
+document.querySelector('#stop').addEventListener('click' , function(){
+    clearTimeout(changeMe)
+    console.log("stopped");
+    
+})
+
+</script>
 </html>
