@@ -118,3 +118,4 @@ Array.from(boxes).forEach(e=> {
 e.style.backgroundColor = getrandomclr();    
 e.style.color = getrandomclr();
 })
+
