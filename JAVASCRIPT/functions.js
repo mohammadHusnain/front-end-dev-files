@@ -14,6 +14,21 @@ console.log("the average of numbers is :" , result1);
 console.log("the average of numbers is :" , result2);
 console.log("the average of numbers is :" , result3);
 
+// ARROW FUNCTIONS 
+
+const hello = (name , age ) => {
+    console.log(`Hello ${name}`);
+    console.log((`You are ${age} years old`));
+    
+    
+}
+
+hello("husnain" , 21)
+
+//arrow functions with map, filter and reduce 
+
+const numbers = [1,2,3,4,5,6,7,8,9]
+const squares = numbers.map
 
 
 
