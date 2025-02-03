@@ -36,6 +36,8 @@ async function main() {
     //     songUL.innerHTML = songUL.innerHTML + `<li> ${song.replaceAll("%20", " ") }</li>`
     // }
 
+// SHOWS ALL SONGS IN PLAYLIST
+
     let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0];
 
     for (const song of songs) {
@@ -43,7 +45,20 @@ async function main() {
             .replaceAll("%2C", " ")
             .replaceAll("%26", " ");
 
-        songUL.innerHTML += `<li>${formattedSong}</li>`;
+        songUL.innerHTML += `<li>
+                                    <img class="invert" src="music.svg" alt="">
+
+                            <div class="info">
+                                <div>${formattedSong}</div>
+                            </div>
+
+                            <div class="playnow">
+                                <span>Play Now!</span>
+                                <img class="invert" src="play.svg" alt="Play" style="width: 30px; height: 30px;">
+                            </div>
+
+        
+        </li>`;
     }
 
 
