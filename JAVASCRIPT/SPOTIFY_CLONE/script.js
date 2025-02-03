@@ -24,7 +24,14 @@ async function getSongs() {
 
 }
 
+const playMusic = (track)=>{
+    let audio = new Audio( "/songs/"  + track)
+    audio.play()
+}
+
 async function main() {
+
+    let currentSong;
 
     let songs = await getSongs();
     console.log(songs);
@@ -56,10 +63,20 @@ async function main() {
                                 <span>Play Now!</span>
                                 <img class="invert" src="play.svg" alt="Play" style="width: 30px; height: 30px;">
                             </div>
-
-        
-        </li>`;
+ </li>`;
     }
+
+
+    // Attach an event listener to each song
+
+
+
+    Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e => {
+        e.addEventListener("click " , element=>{
+            console.log(e);
+            // playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
+        })
+    });
 
 
     // play first song
