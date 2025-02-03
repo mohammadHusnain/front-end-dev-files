@@ -24,7 +24,12 @@ body {
 
 .right {
   width: 75vw;
-  height: 100vh;
+  max-height: 80vh;
+  position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures full height */
+
 }
 
 /* styling left border */
@@ -80,7 +85,7 @@ body {
 
 .container > .right {
   margin-top: 16px;
-  height: 98vh; 
+  height: 90vh; 
 }
 
 .header {
@@ -168,14 +173,45 @@ body {
 
 .playbar{
     position: absolute;
-    width: 70%;
-    bottom: 20px;
-    padding: 0px;
-    background-color: rgb(139, 193, 139 );
+    width: 98%;
+    bottom: 30px;
+    padding: 8px;
+    background-color: rgb(150, 165, 150);
+
 }
 
 .songbuttons{
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+.songlist ul{
+  padding: 0px 42px;
+}
+
+.songlist ul li{
+  list-style-type: decimal;
+  display: flex;
+  gap: 34px;
+  cursor: pointer;
+  padding: 12px 0px;
+  border: 1px solid white;
+  margin: 8px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.playnow{
+  display: flex;
+  justify-content: center;
+}
+
+.playnow span{
+  font-size: 17px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
