@@ -23,8 +23,9 @@ class Dog extends Animal {
 }
 
 // Creating Objects
-const genericAnimal = new Animal("Unknown");
+const genericAnimal = new Animal("alligator");
 genericAnimal.makeSound(); // Output: Animal makes a sound
 
 const myDog = new Dog("Buddy", "Golden Retriever");
 myDog.makeSound(); // Output: Buddy the Golden Retriever barks! 🐶
+console.log(myDog);
