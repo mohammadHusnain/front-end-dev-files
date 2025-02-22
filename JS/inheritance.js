@@ -29,3 +29,27 @@ genericAnimal.makeSound(); // Output: Animal makes a sound
 const myDog = new Dog("Buddy", "Golden Retriever");
 myDog.makeSound(); // Output: Buddy the Golden Retriever barks! 🐶
 console.log(myDog);
+
+//Inheritance allows objects to inherit properties and methods from other objects.
+
+
+
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.greet = function () {
+    console.log(`Hello, my name is ${this.name}`);
+};
+
+function Student(name, major) {
+    Person.call(this, name); // Inherit properties
+    this.major = major;
+}
+
+// Inherit methods
+Student.prototype = Object.create(Person.prototype);
+
+const student = new Student("Alice", "Computer Science");
+student.greet(); // Hello, my name is Alice
+console.log(student.major); // Computer Science
