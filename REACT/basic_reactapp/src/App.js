@@ -9,10 +9,14 @@
 
 import React from "react";
 import "./App.css"; // Import CSS for styling
+import Intro from "./intro";
 
 function App() {
   return (
     <div className="landing-page">
+
+<Intro/>
+
       {/* Header Section */}
       <header className="header">
         <div className="logo">JobFinder</div>
