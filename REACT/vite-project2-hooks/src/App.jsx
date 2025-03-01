@@ -4,17 +4,29 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
-let counter = 5
+  // Hooks : State lets a component “remember” information like user input. For example, a form component can use state to store the input value, while an image gallery component can use state to store the selected image index.
 
-const addvalue = () =>{
-  const cuseState(5)
-  {counter+1}
+  let [counter, setCounter] = useState(10);
 
-console.log("value added as" , Math.random());
+  // let counter = 5 
 
-}
+  const addvalue = () => {
+
+    if (counter < 20) {
+          setCounter(counter+1);
+          console.log("clicked and increased value to", setCounter);
+    }
+    
+  };
+
+  const removevalue = () => {
+    if (counter > 0){
+    setCounter(counter-1);
+    console.log("clicked and decreased value to", setCounter);
+    }
+    
+  };
 
   return (
     <>
@@ -23,7 +35,7 @@ console.log("value added as" , Math.random());
 
       <button onClick={addvalue}>add value {counter}</button>
       <br></br>
-      <button>remove value {counter}</button>
+      <button onClick={removevalue}>remove value {counter}</button>
 
       <p>footer {counter}</p>
     </>
