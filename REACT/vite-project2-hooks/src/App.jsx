@@ -47,24 +47,20 @@ const [count , setCount] = useState(0)
 const [first, setfirst] = useState(0)
 const [color, setcolor] = useState(0)
 
-useEffect(() => {            // apply once when our app is being loaded 
-alert('hey welcome to learn useeffect hook') 
-}, [])
+
+
+
+// run only wen certain values are changed example count and color
 
 useEffect(() => {             // we apply when we need change in a particular prop or state
- alert('count was changed')
+ alert('hey i am running coz color was changed')
+ setcolor(color+1)
 }, [count])
-
-useEffect(() => {
- alert('first was changed')
-}, [first])
-
-
 
   return (
     <>
 
-<Navbar color={"cyan" + " blue"} />
+<Navbar color={"cyan" + " blue" + color} />
 
       {/* <Navbar color={"navy " + "blue" + color} /> */}
       <div>
