@@ -1,42 +1,83 @@
 import React from 'react'
 
-function Card(props) {
-
-console.log("props" , props);
-
+function Card({startTitle , mainTitle}) {    // here username and btnText are passed as descructive props , means written inside {} , we can also access them as props.username but ehwn we write props.username we no need to apply destructive props as written inside curly braces 
 
   return (
     <>
-      
-      <article class="overflow-hidden rounded-lg shadow-sm transition hover:shadow-lg">
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-          class="h-56 w-full object-cover"
-        />
+      <article class="rounded-xl bg-white p-4 ring-3 ring-indigo-50 sm:p-6 lg:p-8">
+        <div class="flex items-start sm:gap-8">
+          <div
+            class="hidden sm:grid sm:size-20 sm:shrink-0 sm:place-content-center sm:rounded-full sm:border-2 sm:border-indigo-500"
+            aria-hidden="true"
+          >
+            <div class="flex items-center gap-1">
+              <span class="h-8 w-0.5 rounded-full bg-indigo-500"></span>
+              <span class="h-6 w-0.5 rounded-full bg-indigo-500"></span>
+              <span class="h-4 w-0.5 rounded-full bg-indigo-500"></span>
+              <span class="h-6 w-0.5 rounded-full bg-indigo-500"></span>
+              <span class="h-8 w-0.5 rounded-full bg-indigo-500"></span>
+            </div>
+          </div>
 
-        <div class="bg-white p-4 sm:p-6">
-          <time datetime="2022-10-10" class="block text-xs text-gray-500">
-            {" "}
-            10th Oct 2022{" "}
-          </time>
+          <div>
+            <strong class="rounded-sm border border-indigo-500 bg-indigo-500 px-3 py-1.5 text-[10px] font-medium text-white"  >{startTitle}
+            </strong>
 
-          <a href="#">
-            <h3 class="mt-0.5 text-lg text-gray-900">
-              How to position your furniture for positivity
+            <h3 class="mt-4 text-lg font-medium sm:text-xl">
+              <a href="#" class="hover:underline">{mainTitle}
+                
+              </a>
             </h3>
-          </a>
 
-          <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-            dolores, possimus pariatur animi temporibus nesciunt praesentium
-            dolore sed nulla ipsum eveniet corporis quidem, mollitia itaque
-            minus soluta, voluptates neque explicabo tempora nisi culpa eius
-            atque dignissimos. Molestias explicabo corporis voluptatem?
-          </p>
+            <p class="mt-1 text-sm text-gray-700">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
+              nulla amet voluptatum sit rerum, atque, quo culpa ut
+              necessitatibus eius suscipit eum accusamus, aperiam voluptas
+              exercitationem facere aliquid fuga. Sint.
+            </p>
+
+            <div class="mt-4 sm:flex sm:items-center sm:gap-2">
+              <div class="flex items-center gap-1 text-gray-500">
+                <svg
+                  class="size-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+
+                <p class="text-xs font-medium">48:32 minutes</p>
+              </div>
+
+              <span class="hidden sm:block" aria-hidden="true">
+                &middot;
+              </span>
+
+              <p class="mt-2 text-xs font-medium text-gray-500 sm:mt-0">
+                Featuring-3{" "}
+                <a href="#" class="underline hover:text-gray-700">
+                  Barry
+                </a>
+                ,
+                <a href="#" class="underline hover:text-gray-700">
+                  Sandra
+                </a>{" "}
+                and
+                <a href="#" class="underline hover:text-gray-700">
+                  August
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </article>
-
     </>
   );
 }
