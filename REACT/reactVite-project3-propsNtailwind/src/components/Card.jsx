@@ -1,6 +1,10 @@
 import React from 'react'
 
-function Card({startTitle , mainTitle}) {    // here username and btnText are passed as descructive props , means written inside {} , we can also access them as props.username but ehwn we write props.username we no need to apply destructive props as written inside curly braces 
+function Card({startTitle , mainTitle}) {    // Components can be passed as props, which stands for properties.
+
+// Props are like function arguments, and you send them into the component as attributes.
+
+// here username and btnText are passed as descructive props , means written inside {} , we can also access them as props.username but ehwn we write props.username we no need to apply destructive props as written inside curly braces 
 
   return (
     <>
