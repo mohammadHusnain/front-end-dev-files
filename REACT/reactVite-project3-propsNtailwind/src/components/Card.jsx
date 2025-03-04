@@ -20,12 +20,18 @@ function Card({startTitle , mainTitle}) {    // here username and btnText are pa
           </div>
 
           <div>
-            <strong class="rounded-sm border border-indigo-500 bg-indigo-500 px-3 py-1.5 text-[10px] font-medium text-white"  >{startTitle}
+            <strong class="rounded-sm border border-indigo-500 bg-indigo-500 px-3 py-1.5 text-[10px] font-medium text-white">
+              {" "}
+              {startTitle} 
+              {/* //here starttile is injected as javascript inside
+              curly braces */}
             </strong>
 
             <h3 class="mt-4 text-lg font-medium sm:text-xl">
-              <a href="#" class="hover:underline">{mainTitle}
-                
+              <a href="#" class="hover:underline">
+                {mainTitle}
+                 {/* //here maintitle is injected as javascript inside
+                curly braces */}
               </a>
             </h3>
 

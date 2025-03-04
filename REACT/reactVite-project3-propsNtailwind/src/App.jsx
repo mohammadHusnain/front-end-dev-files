@@ -23,6 +23,7 @@ function App() {
         startTitle="welcome to episode 1"
         mainTitle="react podcast 1st episode "
       />
+      <br />
       <Card
         startTitle="welcome to episode 2"
         mainTitle="react podcast 2nd episode "
