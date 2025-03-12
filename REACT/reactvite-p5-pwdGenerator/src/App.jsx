@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback , useEffect , useRef} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 // 
@@ -25,21 +25,36 @@ function App() {
   // using usecallback hook for it, it takes inside function and dependencies , dependencies in form of array
   //usecallback is for memorisation means its inside cache memory
 
-  const passwordGenerator = useCallback(()=>{
-    let passwo = "";
-    let string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+  //useref hook
 
-    if (numbersAllowed) string += "0123456789" 
-        if (charactersAllowed) string += "!@#$%^&*()`";
-        
-        for (let i = 1; i <= array.length; i++) {
-          let char = Math.floor (Math.random() * string.length + 1)
-          passwo = string.charAt(char)
-        }
+  const passwordRef = useRef(null)
 
-        setPassword(passwo)
+const passwordGenerator = useCallback(() => {
+  let passwo = "";
+  let string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-  } , [length , numbersAllowed , charactersAllowed , setPassword])
+  if (numbersAllowed) string += "0123456789";
+  if (charactersAllowed) string += "!@#$%^&*()`";
+
+  for (let i = 1; i <= length; i++) {
+    let char = Math.floor(Math.random() * string.length); // Corrected line
+    passwo += string.charAt(char);
+  }
+
+  setPassword(passwo);
+}, [length, numbersAllowed, charactersAllowed , setPassword]);
+
+const copyPasswordToClipboard = useCallback(()=>{
+  //using useref functionality 
+passwordRef.current?.select();
+passwordRef.current?.setSelectionRange(0,999);
+
+window.navigator.clipboard.writeText(password)
+} , [password])
+
+useEffect(() => {
+  passwordGenerator();
+}, [length, numbersAllowed, charactersAllowed, passwordGenerator]);
 
   return (
     <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500">
@@ -51,8 +66,11 @@ function App() {
           className="outline-none w-full py-1 px-3"
           placeholder="Password"
           readOnly
+          ref={passwordRef}
         />
-        <button className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">
+        <button
+        onClick={copyPasswordToClipboard}
+        className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">
           copy
         </button>
       </div>
@@ -78,7 +96,7 @@ function App() {
             defaultChecked={numbersAllowed}
             id="numberInput"
             onChange={() => {
-              setNumberAllowed((prev) => !prev);
+              setnumbersAllowed((prev) => !prev);
             }}
           />
           <label htmlFor="numberInput">Numbers</label>
@@ -90,7 +108,7 @@ function App() {
             defaultChecked={charactersAllowed}
             id="characterInput"
             onChange={() => {
-              setCharAllowed((prev) => !prev);
+              setcharactersAllowed((prev) => !prev);
             }}
           />
           <label htmlFor="characterInput">Characters</label>
