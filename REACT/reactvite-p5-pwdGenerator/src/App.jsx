@@ -74,7 +74,7 @@ useEffect(() => {
         >
           copy
         </button>
-      </div>
+      </div>  
 
       <div className="flex text-sm gap-x-2">
         <div className="flex items-center gap-x-1">
