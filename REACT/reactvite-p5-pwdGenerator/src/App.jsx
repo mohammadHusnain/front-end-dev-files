@@ -69,8 +69,9 @@ useEffect(() => {
           ref={passwordRef}
         />
         <button
-        onClick={copyPasswordToClipboard}
-        className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">
+          onClick={copyPasswordToClipboard}
+          className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0 hover:bg-blue-800 transition-colors duration-200"
+        >
           copy
         </button>
       </div>
@@ -113,8 +114,6 @@ useEffect(() => {
           />
           <label htmlFor="characterInput">Characters</label>
         </div>
-
-
       </div>
     </div>
   );
