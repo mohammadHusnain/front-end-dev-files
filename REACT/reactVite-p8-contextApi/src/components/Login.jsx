@@ -9,7 +9,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUser(username, password);
+    setUser({username, password});
   };
 
   return (
@@ -22,12 +22,17 @@ function Login() {
         placeholder="username"
       />
 
+      <br /> <br />
+
+
       <input
         type="text"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="password"
       />
+
+      <br /><br />
 
       <button onClick={handleSubmit}>Submit</button>
     </div>
