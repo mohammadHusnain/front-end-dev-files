@@ -21,7 +21,9 @@ function Github() {
 
   return (
     <div className="bg-gray-700 text-white text-2xl p-4">
-      Github Followers: {data.followers}
+      Github Name: {data.name} <br />
+      Github Followers: {data.followers} <br />
+      Github Bio: {data.bio}
       <img src={data.avatar_url} alt="git pic" width={200} />
     </div>
   );
