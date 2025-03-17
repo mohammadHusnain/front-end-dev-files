@@ -1,17 +1,29 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import{TodoProvider} from './contexts'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [toDos, setToDo] = useState([])
+
+  const addToDo = (todo) =>{
+    
+  }
 
   return (
-    <>
-      <h1 className="text-white text-3xl p-5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-lg">
-        Hello World To-Do App
-      </h1>{" "}
-    </>
+    <TodoProvider value={{toDo ,addToDo , updateToDo , deleteToDo , toggleComplete}}>
+
+      <div className="bg-[#172842] min-h-screen py-8">
+        <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
+          <h1 className="text-2xl font-bold text-center mb-8 mt-2">
+            Manage Your Todos
+          </h1>
+          <div className="mb-4">{/* Todo form goes here */}</div>
+          <div className="flex flex-wrap gap-y-3">
+            {/*Loop and Add TodoItem here */}
+          </div>
+        </div>
+      </div>
+    </TodoProvider>
   );
 }
 
