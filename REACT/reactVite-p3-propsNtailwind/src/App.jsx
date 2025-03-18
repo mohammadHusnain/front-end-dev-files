@@ -2,31 +2,40 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import CardName from './components/cardname'
 import Card from './components/Card'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
-  let myobj = {
+  let user = {
     name:"hussnain ch",
-    age:21
+    age:21,
+    email:'husnainbhinder@gmail.com'
   }
 
-  return (
+    return (
     <>
-      <h1 className="bg-green-400 text-black p-4 rounded-xl mb-6 ">
-        {" "}
-        tailwind css{" "}
+      {/* Gradient background with CardName component */}
+      <div className="min-h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 flex items-center justify-center p-4">
+        <CardName name={user.name} age={user.age} email={user.email} />
+      </div>
+
+      {/* Additional content */}
+      <h1 className="bg-green-400 text-black p-4 rounded-xl mb-6 text-center">
+        Tailwind CSS
       </h1>
 
+      {/* Card components */}
       <Card
-        startTitle="welcome to episode 1"
-        mainTitle="react podcast 1st episode "
+        startTitle="Welcome to Episode 1"
+        mainTitle="React Podcast 1st Episode"
       />
       <br />
       <Card
-        startTitle="welcome to episode 2"
-        mainTitle="react podcast 2nd episode "
+        startTitle="Welcome to Episode 2"
+        mainTitle="React Podcast 2nd Episode"
       />
     </>
   );
