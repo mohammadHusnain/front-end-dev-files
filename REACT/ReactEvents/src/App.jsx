@@ -18,9 +18,9 @@ const onclick = () => {
 
 const handlechange = (e) =>{
   // setName(e.target.value)
-  setForm({...form , [e.target.name ]: e.target.value})
+  setForm({ ...form, [e.target.name]: e.target.value }); //  we are setting e.target.name to e.target.value  , setform is async it takes some time in loading , the story of hey and then giving a space ahead of it ,
+
   console.log(form);
-  
 }
 
   return (
