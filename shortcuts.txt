@@ -1,0 +1,48 @@
+✅ Main Shortcuts
+
+
+
+Shortcut | What It Does
+
+
+Ctrl + D | {Select the next word that's the same}
+Ctrl + Shift + L | {Select all the same words}
+Alt + Click | {Add more typing spots (cursors)}
+Ctrl + / | {Comment or un-comment the line}
+Shift + Alt + A | {Comment a big section of code}
+Ctrl + P | {Quickly open a file}
+Ctrl + Shift + P | {Open the magic command box}
+Ctrl + B | {Show or hide the left sidebar}
+Ctrl + Shift + O | {Jump to a function or section in your file}
+Ctrl + F | {Find something in the file}
+Ctrl + H | {Find and change something in the file}
+Ctrl + Shift + F | {Search for a word in all files}
+Ctrl + Shift + H | {Find and replace in all files}
+Ctrl + Alt + ↓ / ↑ | {Copy the line up or down}
+Alt + ↓ / ↑ | {Move the line up or down}
+Ctrl + ` | {Show or hide the terminal at the bottom}
+Ctrl + K Z | {Enter Zen Mode (no distractions)}
+F2 | {Rename something (like a variable)}
+Ctrl + Space | {Show suggestions or hints}
+
+
+🔄 Extra Useful Shortcuts (for file & code handling)
+
+
+
+Shortcut | What It Does
+
+
+Ctrl + Shift + N | {Open a new VS Code window}
+Ctrl + Shift + S | {Save everything with a new name}
+Ctrl + Tab | {Switch between open files}
+Ctrl + W | {Close the file you're working on}
+Ctrl + K Ctrl + W | {Close all open files}
+Ctrl + Shift + ` | {Open a new terminal tab}
+Ctrl + Shift + → / ← | {Quickly select whole words}
+Ctrl + Alt + ← / → | {Go back or forward in your code steps}
+Ctrl + L | {Select the full line}
+Ctrl + Enter | {Add a new line below}
+Shift + Enter | {Add a new line above}
+Ctrl + Shift + M | {Show all problems (errors) in code}
+F8 / Shift + F8 | {Jump to next or previous error}
