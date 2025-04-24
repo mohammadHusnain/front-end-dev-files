@@ -9,7 +9,7 @@ const JobListings = ({ isHome = false }) => {
   useEffect(() => {
     const fetchJobs = async () => {
 
-      const ApiUrl = isHome ? 'http://localhost:8000/jobs?_limit=3' : 'http://localhost:8000/jobs' // for 3 jobs on home page with limit 3 and all 6 jobs on jobs page
+      const ApiUrl = isHome ? 'http://localhost:8000/jobs?_limit=3' : 'http://localhost:8000/jobs' // for 3 jobs on home page with limit 3 and all 6 jobs on jobs page 
 
       try {
         const res = await fetch(ApiUrl);
