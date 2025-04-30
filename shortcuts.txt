@@ -25,6 +25,15 @@ Ctrl + K Z | {Enter Zen Mode (no distractions)}
 F2 | {Rename something (like a variable)}
 Ctrl + Space | {Show suggestions or hints}
 
+In VS Code, you can quickly find the closing tag that matches an opening tag (and vice versa) using these keyboard shortcuts and techniques:
+
+1. Keyboard Shortcut (Fastest Method)
+Windows/Linux:
+
+Place cursor on the opening/closing tag.
+
+Press Ctrl + Shift + \ (Backslash).
+
 
 🔄 Extra Useful Shortcuts (for file & code handling)
 
