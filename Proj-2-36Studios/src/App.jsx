@@ -21,8 +21,10 @@ function App() {
   useGSAP(() => {
     const handleClick = (e) => {
       setShowCanvas(!showCanvas);
+      const newThemeState = !isRedTheme;
+      setIsRedTheme(newThemeState);
 
-      // Set initial position of the growing circle
+      // Set initial circle position
       gsap.set(growingspan.current, {
         x: e.clientX,
         y: e.clientY,
@@ -31,48 +33,38 @@ function App() {
         transformOrigin: "center",
       });
 
-      // Determine target colors based on current state
-      const targetBgColor = isRedTheme ? "#000000" : "#fd2c2a";
-      const targetTextColor = isRedTheme ? "#ffffff" : "#000000";
+      // Fast animation parameters
+      const duration = 0.8;
+      const targetBgColor = newThemeState ? "#fd2c2a" : "#000000";
+      const targetTextColor = newThemeState ? "#000000" : "#ffffff";
 
-      // Animate the circle growing
+      // Animate circle
       gsap.to(growingspan.current, {
         scale: 100,
-        duration: 1.5,
-        ease: "power4.inOut",
+        duration: duration,
+        ease: "power3.inOut",
         onStart: () => {
-          // Start changing the background and text colors
+          // Animate background
           gsap.to("body", {
             backgroundColor: targetBgColor,
-            color: targetTextColor,
-            duration: 1.5,
-            ease: "power4.inOut",
+            duration: duration * 0.7,
+            ease: "power2.inOut",
           });
 
-          // Update all text elements
-          gsap.to("h1, h2, h3, h4, h5, h6, p, span, a", {
+          // Instant text color change
+          gsap.set("h1, h2, h3, h4, h5, h6, p, span, a", {
             color: targetTextColor,
-            duration: 1.5,
-            ease: "power4.inOut",
           });
         },
         onComplete: () => {
-          // Toggle the theme state
-          setIsRedTheme((prev) => !prev);
-          // Hide the growing circle
-          gsap.set(growingspan.current, {
-            opacity: 0,
-          });
+          gsap.set(growingspan.current, { opacity: 0 });
         },
       });
     };
 
     const heading = headingref.current;
     heading.addEventListener("click", handleClick);
-
-    return () => {
-      heading.removeEventListener("click", handleClick);
-    };
+    return () => heading.removeEventListener("click", handleClick);
   }, [showCanvas, isRedTheme]);
 
   return (
@@ -85,10 +77,7 @@ function App() {
       <span
         ref={growingspan}
         className="growing-effect fixed rounded-full w-20 h-20 bg-red-600 pointer-events-none z-[1] mix-blend-screen"
-        style={{
-          opacity: 0,
-          transform: "translate(-50%, -50%)",
-        }}
+        style={{ opacity: 0, transform: "translate(-50%, -50%)" }}
       ></span>
 
       <div className="w-full relative min-h-screen font-['Helvetica_Now_Display']">
