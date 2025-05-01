@@ -19,6 +19,13 @@ const Canvas = ({ details }) => {
         setIndex({ value: Math.round(index.value) });
       },
     });
+    gsap.to(canvasRef.current , {
+      opacity:0,
+      scale:0.4,
+      duration:5,
+      ease:"power2.inOut",
+
+    })
   });
 
   useEffect(() => {
