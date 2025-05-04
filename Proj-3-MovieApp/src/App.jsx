@@ -7,6 +7,7 @@ import Home from './Pages/Home';
 import Favourites from './Pages/Favourites';
 import Navbar from './components/Navbar';
 import "./css/App.css"
+import { MovieProvider } from './contexts/MovieContext';
 
 const App = () => {
 
@@ -16,7 +17,7 @@ const App = () => {
           (<MovieCard movie={{ title: "squid game", release_date: "2025", }} /> )} */}
       {/* <Home/> */}
 
-      <div>
+      <MovieProvider>
         <Navbar/>
         <main className="main-content">
           <Routes>
@@ -24,7 +25,7 @@ const App = () => {
             <Route path="/Favourites" element={<Favourites />} />
           </Routes>
         </main>
-      </div>
+      </MovieProvider>
     </>
   );
 }
