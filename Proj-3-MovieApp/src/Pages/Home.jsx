@@ -1,16 +1,35 @@
 import MovieCard from "../components/MovieCard"
 import { useState } from "react"
+import { searchMovies , getPopularMovies } from "../services/api"
+import "../css/Home.css"
+import { useEffect } from "react"
 
 const Home = () =>{
 
     const [searchQuery , setSearchQuery] = useState(""); // state(searchQuery) and function(setSearchQuery) that updates the state
+const [movies , setMovies] = useState([]);
+const [error , setError] = useState(null);
+const [loading , setLoading] = useState(true);
+  
+useEffect(()=>{
+const loadPopularMovies = async()=>{
+  try{
+    const popularMovies = await getPopularMovies()
+    setMovies(popularMovies)
+  }
 
-    const movies = [
-        {id:1 , title:"john dick" , release_date: "2021"},
-        {id:2 , title:"the matrix" , release_date: "2022"},
-        {id:3 , title:"terminator" , release_date: "2023"},
-        {id:4 , title:"tiger 3" , release_date: "2025"}
-    ] 
+  catch(err){
+    console.log(err);
+    setError("Failed to load Movies")
+  }
+
+  finally{
+    setLoading(false)
+  }
+  
+}
+loadPopularMovies()
+} , [])
 
 const handleSearch = (e) =>{
     e.preventDefault()
@@ -21,24 +40,37 @@ const handleSearch = (e) =>{
     return (
       <>
         <div className="home">
+          <form onSubmit={handleSearch} className="search-form">
+            {/* updating state from an input element */}
 
-<form onSubmit={handleSearch} className="search-form">
+            <input
+              type="text"
+              placeholder="Search for movies ..."
+              className="search-input"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
 
-    {/* updating state from an input element */}
+            <button type="submit" className="Search-button">
+              Search
+            </button>
+          </form>
 
-    <input type="text" placeholder="Search for movies ..." className="search-input" value={searchQuery}  onChange={(e)=> setSearchQuery(e.target.value)}/> 
+          {error && <div className="error-meassage">{error}</div>}
 
-    <button type="submit" className="Search-button">Search</button>
-</form>
+{/* conditional rendering is dine here on loading */}
 
-          <div className="movies-grid">
-            {movies.map((movie) => 
-            (
-              <MovieCard movie={movie} key={movie.id} />
-            ))}
+          {loading ? (
+            <div className="loading">Loading...</div>
+          ) : (
+            <div className="movies-grid">
+              {movies.map((movie) => (
+                <MovieCard movie={movie} key={movie.id} />
+              ))}
 
-            {/* key property is important with map */}
-          </div>
+              {/* key property is important with map */}
+            </div>
+          )}
         </div>
       </>
     );
