@@ -1,7 +1,8 @@
 import React from "react" 
 import "../css/MovieCard.css"
 import { useMovieContext } from "../contexts/MovieContext"
- 
+import useStore from '../../store/useStore';  // Remove the curly braces
+
 const MovieCard = ({movie}) => {
 
     const { isFavourite , addToFavourites , removeFromFavourites} = useMovieContext();

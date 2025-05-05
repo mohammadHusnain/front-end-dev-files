@@ -1,0 +1,85 @@
+.app {
+  min-height: 100vh;
+  background-color: #141414;
+  color: white;
+}
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+  padding: 1rem;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #E50914;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+}
+
+.main-content {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.video-player {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .app-header {
+    nav {
+      padding: 0 0.5rem;
+
+      .logo {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .main-content {
+    padding-top: 3rem;
+  }
+} 
