@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardMedia, CardContent, Typography, IconButton } from '@mui/material';
-import { Favorite, PlayArrow, Add } from '@mui/icons-material';
+import { PlayArrow } from '@mui/icons-material';
 import './MovieCard.scss';
 
 const MovieCard = ({ movie, onPlay }) => {
@@ -39,4 +39,4 @@ const MovieCard = ({ movie, onPlay }) => {
   );
 };
 
-export default MovieCard; 
+export default MovieCard;
