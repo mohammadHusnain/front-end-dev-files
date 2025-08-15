@@ -8,4 +8,4 @@ Tailwind CSS for utility-first styling workflows
 
 JavaScript (ES6+) covering DOM manipulation, async programming, and modern syntax
 
-React.js fundamentals including components, hooks, state management, and routing
+React.js fundamentals including components, hooks, state management, and routing.
